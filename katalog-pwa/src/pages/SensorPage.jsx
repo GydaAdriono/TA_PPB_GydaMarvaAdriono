@@ -13,7 +13,7 @@ export default function SensorPage({ favorites, toggleFavorite,onItemClick }) { 
       try {
         setLoading(true);
         // Pastikan nama kategori 'Sensor' sesuai dengan di Database Supabase
-        const response = await axios.get('http://localhost:3000/api/products/category/Sensor');
+        const response = await axios.get('https://katalog-iot-api.vercel.app/api/products/category/Sensor');
         setProducts(response.data);
       } catch (err) {
         console.error(err);

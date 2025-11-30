@@ -13,7 +13,7 @@ export default function AktuatorPage({ favorites, toggleFavorite, onItemClick })
       try {
         setLoading(true);
         // Pastikan nama kategori 'Aktuator' sesuai
-        const response = await axios.get('http://localhost:3000/api/products/category/Aktuator');
+        const response = await axios.get('https://katalog-iot-api.vercel.app/api/products/category/Aktuator');
         setProducts(response.data);
       } catch (err) {
         console.error(err);

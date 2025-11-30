@@ -2,7 +2,7 @@ import { Github, Code, Database, Globe, Smartphone, Mail } from 'lucide-react';
 
 export default function AboutPage() {
   // GANTI LINK INI DENGAN LINK GITHUB ASLI KAMU NANTI
-  const githubLink = "https://github.com/gydaadriono"; // Contoh link profil
+  const githubLink = "https://github.com/GydaAdriono/TA_PPB_GydaMarvaAdriono.git"; // Contoh link profil
 
   return (
     <div className="min-h-screen bg-zinc-50 pb-20 md:pb-8 pt-20 px-4">

@@ -15,7 +15,7 @@ export default function MikroPage({ favorites, toggleFavorite, onItemClick }) {
         setLoading(true);
         // Pastikan nama kategori di URL sama persis dengan di Database Supabase ('Mikrokontroler')
         console.log("CEK ENV:", import.meta.env.VITE_API_URL);
-        const response = await axios.get('http://localhost:3000/api/products/category/Mikrokontroler');
+        const response = await axios.get('https://katalog-iot-api.vercel.app/api/products/category/Mikrokontroler');
         setProducts(response.data);
       } catch (err) {
         console.error(err);

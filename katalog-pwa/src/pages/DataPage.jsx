@@ -33,7 +33,7 @@ export default function DataPage({ onBack }) {
   const fetchProducts = async () => {
     try {
       // Tembak langsung ke localhost:3000
-      const response = await axios.get('http://localhost:3000/api/products');
+      const response = await axios.get('https://katalog-iot-api.vercel.app/api/products');
       setProducts(response.data);
     } catch (error) {
       console.error("Gagal ambil data", error);
@@ -65,13 +65,13 @@ export default function DataPage({ onBack }) {
 
       if (isEditing) {
         // --- LOGIKA UPDATE ---
-        await axios.put(`${import.meta.env.VITE_API_URL}/api/products/${editId}`, data, {
+        await axios.put(`https://katalog-iot-api.vercel.app/api/products/${editId}`, data, {
           headers: { 'Content-Type': 'multipart/form-data' },
         });
         alert('Produk berhasil diupdate!');
       } else {
         // --- LOGIKA CREATE ---
-        await axios.post(`${import.meta.env.VITE_API_URL}/api/products/`, data, {
+        await axios.post(`https://katalog-iot-api.vercel.app/api/products/`, data, {
           headers: { 'Content-Type': 'multipart/form-data' },
         });
         alert('Produk berhasil ditambahkan!');
@@ -91,7 +91,7 @@ export default function DataPage({ onBack }) {
   const handleDelete = async (id) => {
     if (window.confirm("Yakin mau menghapus produk ini?")) {
       try {
-        await axios.delete(`${import.meta.env.VITE_API_URL}/api/products/${id}`);
+        await axios.delete(`https://katalog-iot-api.vercel.app/api/products/${id}`);
         fetchProducts(); // Refresh tabel
       } catch (error) {
         alert("Gagal menghapus");
